@@ -1,12 +1,17 @@
 <?php
     header('Content-type: json-application');
     require 'connect.php';
+    require 'function.php';
+    $q = $_GET['q'];
+    $params = explode('/', $q);
+    $type = $params[0];
+    $id = $params[1];
 
-    $posts = mysqli_query($connect, "SELECT * FROM `post`");
-
-    $postList = [];
-    while($post = mysqli_fetch_assoc($posts)){
-        $postList[] = $post;
+    if($type === 'posts'){
+        if(isset($id)){
+            getPost($connect, $id);
+        }else{
+            getPosts($connect);
+        }
     }
-    echo json_encode($postList)
 ?>
