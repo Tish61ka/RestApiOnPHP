@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+}
+html{
+    overflow-x: hidden;
+}
+section{
+    width: 100vw;
+}
+ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 400px));
+    grid-gap: 4vw;
+    width: 90vw;
+    margin-top: 2vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+ul li{
+    padding: 1vw;
+    border: 0.1vw rgb(185, 185, 185) solid;
+}
+ul li h2{
+    margin-bottom: 1vw;
+}
+ul li p{
+    font-family:'Courier New', Courier, monospace;
+}
+ul li a button{
+    width: 8vw;
+    height: 2vw;
+    background-color: rgb(85, 234, 245);
+    border: 0.1vw rgb(72, 198, 207) solid;
+    color: black;
+    transition: 500ms;
+    margin-top: 1vw;
+}
+ul li a button:hover{
+    cursor: pointer;
+    background: transparent;
+    border-color: black;
+    box-shadow: 0 0 1vw 0.2vw rgb(96, 94, 94);
+}
