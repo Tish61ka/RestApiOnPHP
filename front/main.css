@@ -41,6 +41,6 @@ ul li a button{
 ul li a button:hover{
     cursor: pointer;
     background: transparent;
-    border-color: black;
+    border: none;
     box-shadow: 0 0 1vw 0.2vw rgb(96, 94, 94);
 }
