@@ -1,6 +1,6 @@
 <?php
     require 'connect.php';
-
+//  Вывод постов
     function getPosts($connect){
         $posts = mysqli_query($connect, "SELECT * FROM `post`");
 
@@ -24,7 +24,7 @@
             echo json_encode($post);
         }
     }
-
+//  Добавление поста 
     function addPost($connect, $data){
         $title = $data['title'];
         $body = $data['body'];
@@ -33,6 +33,18 @@
         $res = [
             "status" => true,
             "post_id" => mysqli_insert_id($connect)
+        ];
+        echo json_encode($res);
+    }
+//  Изменение поста
+    function updatePost($connect, $id, $data){
+        $title = $data['title'];
+        $body = $data['body'];
+        mysqli_query($connect, "UPDATE `post` SET `title` = '$title', `body` = '$body' WHERE `post`.`id` = '$id'");
+        http_response_code(200);
+        $res = [
+            "status" => true,
+            "message" => "Пост был успешно изменен"
         ];
         echo json_encode($res);
     }
