@@ -48,4 +48,14 @@
         ];
         echo json_encode($res);
     }
+//  Удаление поста
+    function deletePost($connect, $id){
+        mysqli_query($connect, "DELETE FROM `post` WHERE `post`.`id` = '$id'");
+        http_response_code(200);
+        $res = [
+            "status" => true,
+            "message" => "Пост был успешно удален"
+        ];
+        echo json_encode($res);
+    }
 ?>
