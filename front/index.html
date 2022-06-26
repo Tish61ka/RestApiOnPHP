@@ -10,6 +10,20 @@
 <body>
    <section>
         <ul></ul>
+        <div>
+            <form action="" method="POST">
+            <h1>Добавьте свой пост</h1>
+            <input type="text" name="" id="title" required placeholder="Название поста">
+            <textarea name="" id="body" cols="30" rows="5" required placeholder="Описание поста"></textarea>
+            <button type="submit" onclick="addPost()">Создать</button>
+        </form>
+        <form action="" method="POST">
+            <h1>Редактирование поста</h1>
+            <input type="text" name="" id="title-edit" required placeholder="Название поста">
+            <textarea name="" id="body-edit" cols="30" rows="5" required placeholder="Описание поста"></textarea>
+            <button type="submit" onclick="updatePost()">Сохранить</button>
+        </form>
+        </div>
    </section> 
    <script src="main.js"></script>
 </body>
